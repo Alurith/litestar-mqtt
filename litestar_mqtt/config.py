@@ -2,14 +2,15 @@ from ssl import SSLContext
 from typing import Optional, Union
 
 from gmqtt.mqtt.constants import MQTTv50
-from pydantic import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class MQTTConfig(BaseSettings):
-    class Config:
-        env_prefix = "MQTT_"
-        case_sensitive = True
-        env_file = ".env"
+    model_config = SettingsConfigDict(
+        env_prefix="MQTT_",
+        case_sensitive=True,
+        env_file=".env",
+    )
 
     HOST: str = "localhost"
     PORT: int = 1883
@@ -27,4 +28,4 @@ class MQTTConfig(BaseSettings):
     WILL_DELAY_INTERVAL: Optional[int] = None
 
 
-mqtt_config = MQTTConfig.parse_obj({})
+mqtt_config = MQTTConfig.model_validate({})
