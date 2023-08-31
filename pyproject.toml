@@ -19,6 +19,8 @@ black = "*"
 ruff = "*"
 mypy = "*"
 isort = "*"
+pytest-cov = "*"
+coverage = "*"
 
 
 [tool.poetry.group.test.dependencies]
