@@ -1,26 +1,28 @@
 [tool.poetry]
 name = "litestar-mqtt"
-version = "0.1.0"
+version = "1.0.0"
 description = ""
 authors = ["Alessandro Ferrini <im@alessandroferrini.com>"]
 readme = "README.md"
-packages = [{include = "litestar_mqtt"}]
+packages = [{ include = "litestar_mqtt" }]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-litestar = "^2.0.0a5"
+litestar = "2.*"
 gmqtt = "^0.6.12"
+pydantic = "2.*"
+pydantic-settings = "2.*"
 
 
 [tool.poetry.group.dev.dependencies]
-black = "^23.3.0"
-ruff = "^0.0.263"
-mypy = "^1.2.0"
-isort = "^5.12.0"
+black = "*"
+ruff = "*"
+mypy = "*"
+isort = "*"
 
 
 [tool.poetry.group.test.dependencies]
-pytest = "^7.3.1"
+pytest = "*"
 
 [build-system]
 requires = ["poetry-core"]
